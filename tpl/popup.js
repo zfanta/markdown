@@ -44,6 +44,17 @@ function getMarkdown()
 	debugPrint('>>> getMarkdown()');
 	if(typeof(opener) == "undefined") return;
 
+	var node = opener.editorPrevNode;
+	var form = jQuery('#markdown');
+
+	if(!node || node.nodeName != 'DIV')
+	{
+		var code = opener.editorGetSelectedHtml(opener.editorPrevSrl);
+		code = jQuery('<textarea />').html(code).text();	//특수문자 치환
+		form.find('textarea[name=markdown]').val(code);
+		return;
+	}
+
 	var markdown = jQuery(opener.editorPrevNode).find('span[class=original]').text();
 
 	var form = jQuery('#markdown');
