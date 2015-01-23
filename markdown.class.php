@@ -14,8 +14,18 @@ class markdown extends EditorHandler
 
 	function parseMarkdown()
 	{
+		require_once "$this->component_path/Parsedown.php";
+
+		$parsedown = new Parsedown();
 		$markdown = Context::get('markdown');
-		$this->add('parsedMarkdown', $markdown);
+		$parsedMarkdown = $parsedown->text($markdown);
+		$this->add('parsedMarkdown', $this->wrapParsedMarkdown($parsedMarkdown));
+	}
+
+	function wrapParsedMarkdown($parsedMarkdown)
+	{
+		$wrappedParsedMarkdown = '<div editor_component="markdown">'.$parsedMarkdown.'</div>';
+		return $wrappedParsedMarkdown;
 	}
 
 	function getPopupContent()
