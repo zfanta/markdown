@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+	<item name="insert">
+		<value xml:lang="ko">삽입</value>
+		<value xml:lang="en">Insert</value>
+	</item>
+	<item name="inputMarkDown">
+		<value xml:lang="ko">마크다운을 입력하세요.</value>
+		<value xml:lang="en">Insert markdown.</value>
+	</item>
+</lang>
