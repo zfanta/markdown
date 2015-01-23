@@ -29,3 +29,14 @@ function insertMarkdown()
 		window.close();
 	});
 }
+
+function getMarkdown()
+{
+	debugPrint('>>> getMarkdown()');
+	if(typeof(opener) == "undefined") return;
+
+	var markdown = jQuery(opener.editorPrevNode).find('span[class=original]').text();
+
+	var form = jQuery('#markdown');
+	form.find('textarea[name=markdown]').val(markdown);
+}
