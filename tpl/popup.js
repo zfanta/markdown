@@ -39,6 +39,26 @@ function insertMarkdown()
 	});
 }
 
+function previewMarkdown()
+{
+	debugPrint('>>> previewMarkdown()');
+	if(typeof(opener) == "undefined") return;
+
+	var form = jQuery('#markdown');
+	var markdown = form.find('textarea[name=markdown]').val();
+
+	var argument = {
+		'component': 'markdown',
+		'method': 'parseMarkdown',
+		'markdown' : markdown
+	};
+	jQuery.exec_json('editor.procEditorCall', argument, function(ret_obj) {
+		var parsedMarkdown = ret_obj['parsedMarkdown'];
+		var preview = jQuery('#preview');
+		preview.find('div[name=preview]').html(parsedMarkdown);
+	});
+}
+
 function getMarkdown()
 {
 	debugPrint('>>> getMarkdown()');
