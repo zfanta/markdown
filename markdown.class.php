@@ -19,12 +19,13 @@ class markdown extends EditorHandler
 		$parsedown = new Parsedown();
 		$markdown = Context::get('markdown');
 		$parsedMarkdown = $parsedown->text($markdown);
-		$this->add('parsedMarkdown', $this->wrapParsedMarkdown($parsedMarkdown));
+		$this->add('parsedMarkdown', $this->wrapParsedMarkdown($parsedMarkdown, $markdown));
 	}
 
-	function wrapParsedMarkdown($parsedMarkdown)
+	function wrapParsedMarkdown($parsedMarkdown, $markdown)
 	{
-		$wrappedParsedMarkdown = '<div editor_component="markdown">'.$parsedMarkdown.'</div>';
+		$wrappedMarkdown = '<span class="original" style="display: none">'.$markdown.'</span>';
+		$wrappedParsedMarkdown = '<div editor_component="markdown">'.$parsedMarkdown.$wrappedMarkdown.'</div>';
 		return $wrappedParsedMarkdown;
 	}
 
