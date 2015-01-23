@@ -22,9 +22,18 @@ function insertMarkdown()
 	var response_tags = new Array('error','message','results');
 	jQuery.exec_json('editor.procEditorCall', argument, function(ret_obj) {
 		var parsedMarkdown = ret_obj['parsedMarkdown'];
-		opener.editorFocus(opener.editorPrevSrl);
-		var iframe_obj = opener.editorGetIFrame(opener.editorPrevSrl)
-		opener.editorReplaceHTML(iframe_obj, parsedMarkdown);
+
+		var iframe_obj = opener.editorGetIFrame(opener.editorPrevSrl);
+		var prevNode = opener.editorPrevNode;
+
+		if(prevNode && prevNode.nodeName == 'DIV' && prevNode.getAttribute('editor_component') != null) {
+			prevNode.innerHTML = parsedMarkdown;
+			debugPrint('innerHTML');
+		}
+		else {
+			opener.editorReplaceHTML(iframe_obj, parsedMarkdown);
+			debugPrint('editorReplaceHTML');
+		}
 		opener.editorFocus(opener.editorPrevSrl);
 		window.close();
 	});
