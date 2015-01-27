@@ -22,10 +22,9 @@ class markdown extends EditorHandler
 		$this->add('parsedMarkdown', $this->wrapParsedMarkdown($parsedMarkdown, $markdown));
 	}
 
-	function wrapParsedMarkdown($parsedMarkdown, $markdown)
+	function wrapParsedMarkdown($parsedMarkdown)
 	{
-		$wrappedMarkdown = '<span class="original" style="display: none">'.$markdown.'</span>';
-		$wrappedParsedMarkdown = '<div editor_component="markdown">'.$parsedMarkdown.$wrappedMarkdown.'</div>';
+		$wrappedParsedMarkdown = '<div editor_component="markdown" class="markdown">'.$parsedMarkdown.'</div>';
 		return $wrappedParsedMarkdown;
 	}
 

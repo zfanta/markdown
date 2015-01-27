@@ -1,15 +1,67 @@
 <load target="popup.js" />
+<load target="markdown.css" />
 
-<form action="./" id="markdown" onsubmit="insertMarkdown(); return false">
-	<textarea name="markdown">{$lang->inputMarkDown}</textarea>
-	<input type="submit" value="{$lang->insert}" />
-</form>
+<div id="head">
+	<div style="padding: 10px;">
+		<h3>마크다운 입력기</h3>
+	</div>
+</div>
+<div id="input">
+	<form action="./" id="markdown">
+		<textarea name="markdown" placeholder="{$lang->inputMarkDown}" style="-webkit-border-radius: 0;border-radius: 0"></textarea>
+		<button onclick="insertMarkdown(); return false;" value="{$lang->insert}">입력</button><button onclick="previewMarkdown(); return false;" style="background-color: #230721">미리보기</button>
+	</form>
+</div>
 
-<form action="./" id="preview" onsubmit="previewMarkdown(); return false">
-	<div name="preview"></div>
-	<input type="submit" value="미리보기" />
-</form>
+<div id="preview">
+</div>
 
 <script type="text/javascript">
 	getMarkdown();
 </script>
+
+<style>
+	body {
+		margin: 0;
+	}
+
+	#head {
+		background-color: #EEEEEE;
+		height: 60px;
+	}
+
+	#input {
+		padding: 20px;
+		background: #222;
+	}
+
+	#input textarea {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		background: #222;
+		border: none;
+		box-sizing: border-box;
+		color: #fff;
+		font-family: "Source Code Pro", Monaco, Andale Mono, Consolas, monospace;
+		font-size: 16px;
+		height: 500px;
+		margin: 0;
+		resize: none;
+		vertical-align: top;
+		width: 100%;
+		outline: none;
+	}
+
+	#input button {
+		width: 50%;
+		height: 40px;
+		border: none;
+		margin: 0;
+		background-color: #100c18;
+		color: #FFFFFF;
+	}
+
+	#preview {
+		padding: 20px;
+	}
+</style>
