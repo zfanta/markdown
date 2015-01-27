@@ -9,9 +9,9 @@
 <div id="input">
 	<form action="./" id="markdown">
 		<textarea name="markdown" placeholder="{$lang->inputMarkDown}" style="-webkit-border-radius: 0;border-radius: 0"></textarea>
-		<button onclick="insertMarkdown(); return false;" value="{$lang->insert}">입력</button><button onclick="previewMarkdown(); return false;" style="background-color: #230721">미리보기</button>
 	</form>
 </div>
+<button onclick="insertMarkdown(); return false;" value="{$lang->insert}">입력</button><button onclick="previewMarkdown(); return false;" style="background-color: #230721">미리보기</button>
 
 <div id="preview">
 </div>
@@ -52,7 +52,7 @@
 		outline: none;
 	}
 
-	#input button {
+	button {
 		width: 50%;
 		height: 40px;
 		border: none;
