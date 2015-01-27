@@ -39,12 +39,14 @@ class markdown extends EditorHandler
 
 	function transHTML($xmlObject)
 	{
+		Context::addCSSFile("$this->component_path/tpl/markdown.css");
+		Context::addCSSFile("$this->component_path/tpl/fonts.css");
 		require_once "$this->component_path/Parsedown.php";
 		$trimmedSource = ltrim($xmlObject->body, '<pre>');
 		$trimmedSource = rtrim($trimmedSource, '</pre>');
 
 		$parsedown = new Parsedown();
 		$parsedMarkdown = $parsedown->text($trimmedSource);
-		return $parsedMarkdown;
+		return "<div class='markdown'>$parsedMarkdown</div>";
 	}
 }
