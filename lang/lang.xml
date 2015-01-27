@@ -8,4 +8,12 @@
 		<value xml:lang="ko">마크다운을 입력하세요.</value>
 		<value xml:lang="en">Insert markdown.</value>
 	</item>
+	<item name="preview">
+		<value xml:lang="ko">미리보기</value>
+		<value xml:lang="en">Preview</value>
+	</item>
+	<item name="componentTitle">
+		<value xml:lang="ko">마크다운 입력기</value>
+		<value xml:lang="en">Markdown Editor</value>
+	</item>
 </lang>

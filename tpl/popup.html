@@ -3,7 +3,7 @@
 
 <div id="head">
 	<div style="padding: 10px;">
-		<h3>마크다운 입력기</h3>
+		<h3>{$lang->componentTitle}</h3>
 	</div>
 </div>
 <div id="input">
@@ -11,7 +11,7 @@
 		<textarea name="markdown" placeholder="{$lang->inputMarkDown}" style="-webkit-border-radius: 0;border-radius: 0"></textarea>
 	</form>
 </div>
-<button onclick="insertMarkdown(); return false;" value="{$lang->insert}">입력</button><button onclick="previewMarkdown(); return false;" style="background-color: #230721">미리보기</button>
+<button onclick="insertMarkdown(); return false;">{$lang->insert}</button><button onclick="previewMarkdown(); return false;" style="background-color: #230721">{$lang->preview}</button>
 
 <div id="preview">
 </div>
