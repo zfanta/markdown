@@ -36,4 +36,15 @@ class markdown extends EditorHandler
 		$oTemplate = &TemplateHandler::getInstance();
 		return $oTemplate->compile($tpl_path, $tpl_file);
 	}
+
+	function transHTML($xmlObject)
+	{
+		require_once "$this->component_path/Parsedown.php";
+		$trimmedSource = ltrim($xmlObject->body, '<pre>');
+		$trimmedSource = rtrim($trimmedSource, '</pre>');
+
+		$parsedown = new Parsedown();
+		$parsedMarkdown = $parsedown->text($trimmedSource);
+		return $parsedMarkdown;
+	}
 }
