@@ -24,7 +24,6 @@ class markdown extends EditorHandler
 
 	function wrapParsedMarkdown($parsedMarkdown, $markdown)
 	{
-		$markdown = base64_encode($markdown);
 		$wrappedMarkdown = '<span class="original" style="display: none">'.$markdown.'</span>';
 		$wrappedParsedMarkdown = '<div editor_component="markdown">'.$parsedMarkdown.$wrappedMarkdown.'</div>';
 		return $wrappedParsedMarkdown;
