@@ -14,29 +14,22 @@ function insertMarkdown()
 	var form = jQuery('#markdown');
 	var markdown = form.find('textarea[name=markdown]').val();
 
-	var argument = {
-		'component': 'markdown',
-		'method': 'parseMarkdown',
-		'markdown' : markdown
-	};
-	var response_tags = new Array('error','message','results');
-	jQuery.exec_json('editor.procEditorCall', argument, function(ret_obj) {
-		var parsedMarkdown = ret_obj['parsedMarkdown'];
+	var wrappedMarkdown = '<pre>'+markdown+'</pre>'
 
-		var iframe_obj = opener.editorGetIFrame(opener.editorPrevSrl);
-		var prevNode = opener.editorPrevNode;
+	var iframe_obj = opener.editorGetIFrame(opener.editorPrevSrl);
+	var prevNode = opener.editorPrevNode;
 
-		if(prevNode && prevNode.nodeName == 'DIV' && prevNode.getAttribute('editor_component') != null) {
-			prevNode.innerHTML = parsedMarkdown;
-			debugPrint('innerHTML');
-		}
-		else {
-			opener.editorReplaceHTML(iframe_obj, parsedMarkdown);
-			debugPrint('editorReplaceHTML');
-		}
-		opener.editorFocus(opener.editorPrevSrl);
-		window.close();
-	});
+	if(prevNode && prevNode.nodeName == 'DIV' && prevNode.getAttribute('editor_component') != null) {
+		prevNode.innerHTML = wrappedMarkdown;
+		debugPrint('innerHTML');
+	}
+	else {
+		wrappedMarkdown = '<div editor_component="markdown">'+wrappedMarkdown+'</div>';
+		opener.editorReplaceHTML(iframe_obj, wrappedMarkdown);
+		debugPrint('editorReplaceHTML');
+	}
+	opener.editorFocus(opener.editorPrevSrl);
+	window.close();
 }
 
 function previewMarkdown()
@@ -75,7 +68,7 @@ function getMarkdown()
 		return;
 	}
 
-	var markdown = jQuery(opener.editorPrevNode).find('span[class=original]').text();
+	var markdown = jQuery(opener.editorPrevNode).find('pre').text();
 
 	var form = jQuery('#markdown');
 	form.find('textarea[name=markdown]').val(markdown);
