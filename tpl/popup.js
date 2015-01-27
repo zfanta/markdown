@@ -24,7 +24,7 @@ function insertMarkdown()
 		debugPrint('innerHTML');
 	}
 	else {
-		wrappedMarkdown = '<div editor_component="markdown">'+wrappedMarkdown+'</div>';
+		wrappedMarkdown = '<div editor_component="markdown" style="border:#000 1px dotted; padding: 10px">'+wrappedMarkdown+'</div>';
 		opener.editorReplaceHTML(iframe_obj, wrappedMarkdown);
 		debugPrint('editorReplaceHTML');
 	}
