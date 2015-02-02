@@ -43,6 +43,7 @@ class markdown extends EditorHandler
 		require_once "$this->component_path/Parsedown.php";
 		$trimmedSource = ltrim($xmlObject->body, '<pre>');
 		$trimmedSource = rtrim($trimmedSource, '</pre>');
+		$trimmedSource = htmlspecialchars_decode($trimmedSource);
 
 		$parsedown = new Parsedown();
 		$parsedMarkdown = $parsedown->text($trimmedSource);
