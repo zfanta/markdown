@@ -1,3 +1,7 @@
+.markdown em {
+	font-style: italic;
+}
+
 .markdown a {
 	color: #159;
 	outline: none;
