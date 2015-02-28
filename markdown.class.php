@@ -38,8 +38,8 @@ class markdown extends EditorHandler
 
 	function transHTML($xmlObject)
 	{
-		Context::addCSSFile("$this->component_path/tpl/markdown.css");
-		Context::addCSSFile("$this->component_path/tpl/fonts.css");
+		Context::addCSSFile("$this->component_path/tpl/markdown.css", false, 'all', '', 9999);
+		Context::addCSSFile("$this->component_path/tpl/fonts.css", false, 'all', '', 9999);
 		require_once "$this->component_path/Parsedown.php";
 		$trimmedSource = ltrim($xmlObject->body, '<pre>');
 		$trimmedSource = rtrim($trimmedSource, '</pre>');
