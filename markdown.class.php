@@ -41,8 +41,10 @@ class markdown extends EditorHandler
 		Context::addCSSFile("$this->component_path/tpl/markdown.css", false, 'all', '', 9999);
 		Context::addCSSFile("$this->component_path/tpl/fonts.css", false, 'all', '', 9999);
 		require_once "$this->component_path/Parsedown.php";
-		$trimmedSource = ltrim($xmlObject->body, '<pre>');
-		$trimmedSource = rtrim($trimmedSource, '</pre>');
+		$trimmedSource = ltrim($xmlObject->body);
+		$trimmedSource = ltrim($trimmedSource, "<pre>");
+		$trimmedSource = rtrim($trimmedSource);
+		$trimmedSource = rtrim($trimmedSource, "</pre>");
 		$trimmedSource = htmlspecialchars_decode($trimmedSource);
 
 		$parsedown = new Parsedown();
