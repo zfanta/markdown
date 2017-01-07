@@ -4,7 +4,7 @@
 	<title xml:lang="en">Markdown</title>
 	<description xml:lang="ko">마크다운을 html로 해석하여 삽입합니다.</description>
 	<description xml:lang="en">Insert markdown parsed in html</description>
-	<version>0.6</version>
+	<version>0.7</version>
 	<date>2015-01-22</date>
 	<license link="http://opensource.org/licenses/MIT">MIT</license>
 	<author email_address="jht008@gmail.com" link="mailto:jht008@gmail.com">
