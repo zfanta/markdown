@@ -1,248 +1,746 @@
-.markdown em {
-	font-style: italic;
-}
+/*
+ *
+ * reset
+ *
+ */
 
-.markdown a {
-	color: #159;
-	outline: none;
-	text-decoration: none;
+.markdown html {
+	display: block;
 }
-
-.markdown a img {
-	border: none;
-}
-
-.markdown abbr {
-	border-bottom: 1px solid #ddd;
-	cursor: help;
-	padding: 2px 3px;
-}
-
-.markdown {
-	background: #ddd;
-	color: #333;
-	font-family: "Ubuntu", "lucida grande", tahoma, verdana, arial, sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	height: 100%;
-	line-height: 22px;
-	margin: 0;
-	padding: 0;
-}
-
-.markdown blockquote {
-	background: #eee;
-	margin: 0 0 10px 0;
-	padding: 10px 10px 1px 10px;
-}
-
-.markdown button {
-	background: none;
-	border: 0;
-	color: #159;
-	cursor: pointer;
-	font-family: "Ubuntu", "lucida grande", tahoma, verdana, arial, sans-serif;
-	font-size: 18px;
-	line-height: 20px;
-	margin: 0;
-	padding: 0;
-}
-
-.markdown code {
-	color: #333;
-	font-family: "Source Code Pro", "Source Code Pro", Monaco, Andale Mono, Consolas, monospace;
-	font-size: 16px;
-}
-
-.markdown form {
-	margin: 0;
-	padding: 0;
-}
-
-.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-	font-family: "Ubuntu", "lucida grande", tahoma, verdana, arial, sans-serif;
-	font-weight: normal;
-	margin: 20px 0;
-}
-
-.markdown {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-.markdown img {
-	outline: none;
-}
-
-.markdown input {
-	font-family: "Ubuntu", "lucida grande", tahoma, verdana, arial, sans-serif;
-	font-size: 18px;
-	line-height: 20px;
-	margin: 0;
-}
-
-.markdown object {
-	outline: none;
-}
-
-.markdown p {
-	margin-top: 0;
-	margin-bottom: 10px;
-}
-
-.markdown select {
-	font-family: "Ubuntu", "lucida grande", tahoma, verdana, arial, sans-serif;
-	font-size: 18px;
-	/* Makes for the same height as <input>. */
-	height: 40px;
-	margin: 0;
-}
-
-.markdown table {
-	border-spacing: 0;
-}
-
-.markdown textarea {
-	background: #fff;
-	font-family: "Ubuntu", "lucida grande", tahoma, verdana, arial, sans-serif;
-	font-size: 18px;
-	line-height: 20px;
-	margin: 0;
-	padding: 9px;
-	width: 280px;
-}
-
-.markdown ul {
-	list-style-type: square;
-}
-
-.markdown ::-webkit-scrollbar {
+.markdown head,
+.markdown link,
+.markdown meta,
+.markdown script,
+.markdown style,
+.markdown title {
 	display: none;
 }
-
-.markdown a {
-	border-bottom: 1px dashed #bbb;
-	color: #333;
-	padding-bottom: 5px;
+.markdown body {
+	display: block;
+	margin: 8px;
 }
-
-.markdown {
-	-webkit-font-smoothing: antialiased;
-	background: #fff;
+.markdown p {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
 }
-
-.markdown code {
-	-webkit-font-smoothing: subpixel-antialiased;
+.markdown address,
+.markdown article,
+.markdown aside,
+.markdown div,
+.markdown footer,
+.markdown header,
+.markdown main,
+.markdown nav,
+.markdown section {
+	display: block;
 }
-
-.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-	margin: 0 0 5px 0;
+.markdown blockquote {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 40px;
+	-webkit-margin-end: 40px;
 }
-
-.markdown div.odd {
-	background: #eee;
+.markdown figcaption {
+	display: block;
 }
-
-.markdown {
-	overflow: -moz-scrollbars-none;
+.markdown figure {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 40px;
+	-webkit-margin-end: 40px;
 }
-
+.markdown q {
+	display: inline;
+}
+.markdown q::before {
+	content: open-quote;
+}
+.markdown q::after {
+	content: close-quote;
+}
+.markdown center {
+	display: block;
+	/* special centering to be able to emulate the html4/netscape behaviour */
+	text-align: -webkit-center;
+}
+.markdown hr {
+	display: block;
+	-webkit-margin-before: 0.5em;
+	-webkit-margin-after: 0.5em;
+	-webkit-margin-start: auto;
+	-webkit-margin-end: auto;
+	border: 1px inset;
+}
+.markdown video {
+	object-fit: contain;
+}
+.markdown h1 {
+	display: block;
+	font-size: 2em;
+	-webkit-margin-before: 0.67em;
+	-webkit-margin-after: 0.67em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: bold;
+}
+.markdown :matches(article, aside, nav, section) h1 {
+	font-size: 1.5em;
+	-webkit-margin-before: 0.83em;
+	-webkit-margin-after: 0.83em;
+}
+.markdown :matches(article, aside, nav, section) :matches(article, aside, nav, section) h1 {
+	font-size: 1.17em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+}
+.markdown :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) h1 {
+	font-size: 1.00em;
+	-webkit-margin-before: 1.33em;
+	-webkit-margin-after: 1.33em;
+}
+.markdown :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) h1 {
+	font-size: .83em;
+	-webkit-margin-before: 1.67em;
+	-webkit-margin-after: 1.67em;
+}
+.markdown :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) h1 {
+	font-size: .67em;
+	-webkit-margin-before: 2.33em;
+	-webkit-margin-after: 2.33em;
+}
+.markdown h2 {
+	display: block;
+	font-size: 1.5em;
+	-webkit-margin-before: 0.83em;
+	-webkit-margin-after: 0.83em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: bold;
+}
+.markdown h3 {
+	display: block;
+	font-size: 1.17em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: bold;
+}
+.markdown h4 {
+	display: block;
+	-webkit-margin-before: 1.33em;
+	-webkit-margin-after: 1.33em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: bold;
+}
+.markdown h5 {
+	display: block;
+	font-size: .83em;
+	-webkit-margin-before: 1.67em;
+	-webkit-margin-after: 1.67em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: bold;
+}
+.markdown h6 {
+	display: block;
+	font-size: .67em;
+	-webkit-margin-before: 2.33em;
+	-webkit-margin-after: 2.33em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	font-weight: bold;
+}
+.markdown table {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: gray;
+}
+.markdown thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+.markdown tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+.markdown tfoot {
+	display: table-footer-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+.markdown table > tr {
+	vertical-align: middle;
+}
+.markdown col {
+	display: table-column;
+}
+.markdown colgroup {
+	display: table-column-group;
+}
+.markdown tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+.markdown td,
+.markdown th {
+	display: table-cell;
+	vertical-align: inherit;
+}
+.markdown th {
+	font-weight: bold;
+}
+.markdown caption {
+	display: table-caption;
+	text-align: -webkit-center;
+}
+.markdown ul,
+.markdown menu,
+.markdown dir {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-start: 40px;
+}
+.markdown ol {
+	display: block;
+	list-style-type: decimal;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-start: 40px;
+}
+.markdown li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+.markdown ul ul,
+.markdown ol ul {
+	list-style-type: circle;
+}
+.markdown ol ol ul,
+.markdown ol ul ul,
+.markdown ul ol ul,
+.markdown ul ul ul {
+	list-style-type: square;
+}
+.markdown dd {
+	display: block;
+	-webkit-margin-start: 40px;
+}
+.markdown dl {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+}
+.markdown dt {
+	display: block;
+}
+.markdown ol ul,
+.markdown ul ol,
+.markdown ul ul,
+.markdown ol ol {
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+.markdown form {
+	display: block;
+	margin-top: 0;
+}
+.markdown label {
+	cursor: default;
+}
+.markdown legend {
+	display: block;
+	-webkit-padding-start: 2px;
+	-webkit-padding-end: 2px;
+	border: none;
+}
+.markdown fieldset {
+	display: block;
+	-webkit-margin-start: 2px;
+	-webkit-margin-end: 2px;
+	-webkit-padding-before: 0.35em;
+	-webkit-padding-start: 0.75em;
+	-webkit-padding-end: 0.75em;
+	-webkit-padding-after: 0.625em;
+	border: 2px groove ThreeDFace;
+	min-width: min-content;
+}
+.markdown button {
+	-webkit-appearance: button;
+}
+.markdown input,
+.markdown textarea,
+.markdown keygen,
+.markdown select,
+.markdown button,
+.markdown meter,
+.markdown progress {
+	-webkit-writing-mode: horizontal-tb !important;
+}
+.markdown input,
+.markdown textarea,
+.markdown keygen,
+.markdown select,
+.markdown button {
+	margin: 0;
+	color: initial;
+	letter-spacing: normal;
+	word-spacing: normal;
+	line-height: normal;
+	text-transform: none;
+	text-indent: 0;
+	text-shadow: none;
+	display: inline-block;
+	text-align: start;
+}
+.markdown input[type="hidden"] {
+	display: none;
+}
+.markdown input,
+.markdown input:matches([type="password"], [type="search"]) {
+	-webkit-appearance: textfield;
+	background-color: white;
+	border: 2px inset;
+	padding: 1px;
+	-webkit-rtl-ordering: logical;
+	-webkit-user-select: text;
+	cursor: auto;
+}
+.markdown input[type="search"] {
+	-webkit-appearance: searchfield;
+	box-sizing: border-box;
+}
+.markdown input::-webkit-textfield-decoration-container {
+	display: flex;
+	align-items: center;
+	content: none !important;
+}
+.markdown input::-webkit-clear-button {
+	-webkit-appearance: searchfield-cancel-button;
+	display: inline-block;
+	flex: none;
+	margin-left: 2px;
+}
+.markdown input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: searchfield-cancel-button;
+	display: block;
+	flex: none;
+	align-self: flex-start;
+	margin: auto 0;
+}
+.markdown input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: searchfield-decoration;
+	display: block;
+	flex: none;
+	align-self: flex-start;
+	margin: auto 0;
+}
+.markdown input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance: searchfield-results-decoration;
+	display: block;
+	flex: none;
+	align-self: flex-start;
+	margin: auto 0;
+}
+.markdown input[type="search"]::-webkit-search-results-button {
+	-webkit-appearance: searchfield-results-button;
+	display: block;
+	flex: none;
+}
+.markdown input::-webkit-date-and-time-value {
+	margin: 1px 24px 1px 4px;
+	white-space: pre;
+}
+.markdown input::-webkit-inner-spin-button {
+	-webkit-appearance: inner-spin-button;
+	display: block;
+	position: relative;
+	cursor: default;
+	/* This height property is ignored for input type "number" and others which
+       * use RenderTextControlSingleLine as renderer which sets height of spin
+       * button in layout(). */
+	height: 1.5em;
+	flex: none;
+	-webkit-user-select: none;
+}
+.markdown keygen,
+.markdown select {
+	border-radius: 5px;
+}
+.markdown keygen::-webkit-keygen-select {
+	margin: 0;
+}
+.markdown textarea {
+	-webkit-appearance: textarea;
+	background-color: white;
+	border: 1px solid;
+	-webkit-rtl-ordering: logical;
+	-webkit-user-select: text;
+	flex-direction: column;
+	cursor: auto;
+	padding: 2px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+.markdown input[type="password"] {
+	-webkit-text-security: disc !important;
+}
+.markdown input:matches([type="hidden"], [type="image"], [type="file"]) {
+	-webkit-appearance: initial;
+	padding: initial;
+	background-color: initial;
+	border: initial;
+}
+.markdown input[type="file"] {
+	align-items: baseline;
+	color: inherit;
+	text-align: start !important;
+}
+.markdown input:-webkit-autofill {
+	background: #FAFFBD none !important;
+	color: #000000 !important;
+}
+.markdown input:matches([type="radio"], [type="checkbox"]) {
+	margin: 3px 2px;
+	padding: initial;
+	background-color: initial;
+	border: initial;
+}
+.markdown input:matches([type="button"], [type="submit"], [type="reset"]) {
+	-webkit-appearance: push-button;
+	white-space: pre;
+}
+.markdown input[type="file"]::-webkit-file-upload-button {
+	-webkit-appearance: push-button;
+	white-space: nowrap;
+	margin: 0;
+	font-size: inherit;
+}
+.markdown input:matches([type="button"], [type="submit"], [type="reset"]),
+.markdown input[type="file"]::-webkit-file-upload-button,
+.markdown button {
+	align-items: flex-start;
+	text-align: center;
+	cursor: default;
+	color: ButtonText;
+	padding: 2px 6px 3px 6px;
+	border: 2px outset ButtonFace;
+	background-color: ButtonFace;
+	box-sizing: border-box;
+}
+.markdown input:matches([type="button"], [type="submit"], [type="reset"]):active,
+.markdown input[type="file"]::-webkit-file-upload-button:active,
+.markdown input[type="range"] {
+	-webkit-appearance: slider-horizontal;
+	padding: initial;
+	border: initial;
+	margin: 2px;
+	color: #909090;
+}
+.markdown input[type="range"]::-webkit-slider-container,
+.markdown input[type="range"]::-webkit-media-slider-container {
+	flex: 1;
+	box-sizing: border-box;
+	display: flex;
+	align-contents: center;
+}
+.markdown input[type="range"]::-webkit-slider-runnable-track {
+	flex: 1;
+	align-self: center;
+	box-sizing: border-box;
+	display: block;
+}
+.markdown input[type="range"]::-webkit-slider-thumb,
+.markdown input[type="range"]::-webkit-media-slider-thumb {
+	-webkit-appearance: sliderthumb-horizontal;
+	box-sizing: border-box;
+	display: block;
+}
+.markdown input:matches([type="button"], [type="submit"], [type="reset"]):disabled,
+.markdown input[type="file"]:disabled::-webkit-file-upload-button,
+.markdown button:disabled,
+.markdown select:disabled,
+.markdown keygen:disabled,
+.markdown optgroup:disabled,
+.markdown option:disabled,
+.markdown select[disabled] > option {
+	color: GrayText;
+}
+.markdown area,
+.markdown param {
+	display: none;
+}
+.markdown input[type="checkbox"] {
+	-webkit-appearance: checkbox;
+	box-sizing: border-box;
+}
+.markdown input[type="radio"] {
+	-webkit-appearance: radio;
+	box-sizing: border-box;
+}
+.markdown select {
+	box-sizing: border-box;
+	-webkit-appearance: menulist;
+	border: 1px solid;
+	color: black;
+	background-color: white;
+	align-items: center;
+	white-space: pre;
+	-webkit-rtl-ordering: logical;
+	cursor: default;
+}
+.markdown select:matches([size], [multiple], [size][multiple]) {
+	-webkit-appearance: listbox;
+	align-items: flex-start;
+	border: 1px inset gray;
+	border-radius: initial;
+	white-space: initial;
+}
+.markdown select:matches([size="0"], [size="1"]) {
+	-webkit-appearance: menulist;
+	align-items: center;
+	border: 1px solid;
+	border-radius: 5px;
+	white-space: pre;
+}
+.markdown optgroup {
+	font-weight: bolder;
+}
+.markdown option {
+	font-weight: normal;
+}
+.markdown output {
+	display: inline;
+}
+.markdown ::-webkit-validation-bubble {
+	display: inline-block;
+	z-index: 2147483647;
+	position: absolute;
+	opacity: 0.95;
+	line-height: 0;
+	margin: 0;
+	-webkit-text-security: none;
+	transition: opacity 05.5s ease;
+}
+.markdown ::-webkit-validation-bubble-message {
+	display: flex;
+	position: relative;
+	top: -4px;
+	font: message-box;
+	color: black;
+	min-width: 50px;
+	max-width: 200px;
+	border: solid 2px #400;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8ecec), to(#e8cccc));
+	padding: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 4px 4px 4px rgba(100, 100, 100, 0.6), inset -2px -2px 1px #d0c4c4, inset 2px 2px 1px white;
+	line-height: normal;
+	white-space: normal;
+	z-index: 2147483644;
+}
+.markdown ::-webkit-validation-bubble-text-block {
+	flex: 1;
+}
+.markdown ::-webkit-validation-bubble-heading {
+	font-weight: bold;
+}
+.markdown ::-webkit-validation-bubble-arrow {
+	display: inline-block;
+	position: relative;
+	left: 32px;
+	width: 16px;
+	height: 16px;
+	background-color: #f8ecec;
+	border-width: 2px 0 0 2px;
+	border-style: solid;
+	border-color: #400;
+	box-shadow: inset 2px 2px 1px white;
+	-webkit-transform-origin: 0 0;
+	transform: rotate(45deg);
+	z-index: 2147483645;
+}
+.markdown ::-webkit-validation-bubble-arrow-clipper {
+	display: block;
+	overflow: hidden;
+	height: 16px;
+}
+.markdown progress::-webkit-progress-inner-element {
+	-webkit-appearance: inherit;
+	box-sizing: inherit;
+	height: 100%;
+	width: 100%;
+}
+.markdown progress::-webkit-progress-bar {
+	background-color: gray;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+.markdown progress::-webkit-progress-value {
+	background-color: green;
+	height: 100%;
+	width: 50%;
+	/* should be removed later */
+	box-sizing: border-box;
+}
+.markdown u,
+.markdown ins {
+	text-decoration: underline;
+}
+.markdown strong,
+.markdown b {
+	font-weight: bold;
+}
+.markdown i,
+.markdown cite,
+.markdown em,
+.markdown var,
+.markdown address,
+.markdown dfn {
+	font-style: italic;
+}
+.markdown tt,
+.markdown code,
+.markdown kbd,
+.markdown samp {
+	font-family: monospace;
+}
 .markdown pre {
-	margin: 0;
-	white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
-	white-space: -o-pre-wrap; /* Opera */
-	white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
-	word-wrap: break-word; /* IE 5.5+ */
+	display: block;
+	font-family: monospace;
+	white-space: pre;
+	margin: 1em 0;
 }
-
-.markdown span.highlight {
-	background: #396;
-	color: #fff;
-	padding: 2px 5px;
+.markdown mark {
+	background-color: yellow;
+	color: black;
 }
-
-/*
- *
- * td
- *
- */
-
-.markdown div.td {
-	float: left;
-	width: 35%;
+.markdown big {
+	font-size: larger;
 }
-
-.markdown div.td div {
-	padding: 20px;
+.markdown small {
+	font-size: smaller;
 }
-
-/*
- *
- * head
- *
- */
-
-.markdown div.head {
-	background: #eee;
-	border-bottom: 1px solid #eee;
+.markdown s,
+.markdown strike,
+.markdown del {
+	text-decoration: line-through;
 }
-
-/*
- *
- * nav
- *
- */
-
-.markdown div.nav {
-	background: #222;
-	color: #fff;
-	padding: 10px 20px 0 20px;
+.markdown sub {
+	vertical-align: sub;
+	font-size: smaller;
 }
-
-.markdown div.nav ul {
-	list-style-type: none;
+.markdown sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+.markdown nobr {
+	white-space: nowrap;
+}
+.markdown :focus {
+	outline: auto 5px -webkit-focus-ring-color;
+}
+.markdown html:focus,
+.markdown body:focus,
+.markdown input[readonly]:focus,
+.markdown applet:focus,
+.markdown embed:focus,
+.markdown iframe:focus,
+.markdown object:focus {
+	outline: none;
+}
+.markdown input:focus,
+.markdown textarea:focus,
+.markdown keygen:focus,
+.markdown select:focus {
+	outline-offset: -2px;
+}
+.markdown input:matches([type="button"], [type="checkbox"], [type="file"], [type="hidden"], [type="image"], [type="radio"], [type="reset"], [type="search"], [type="submit"]):focus,
+.markdown input[type="file"]:focus::-webkit-file-upload-button {
+	outline-offset: 0;
+}
+.markdown a:any-link {
+	color: -webkit-link;
+	text-decoration: underline;
+	cursor: auto;
+}
+.markdown a:any-link:active {
+	color: -webkit-activelink;
+}
+.markdown ruby,
+.markdown rt {
+	text-indent: 0;
+	/* blocks used for ruby rendering should not trigger this */
+}
+.markdown rt {
+	line-height: normal;
+	-webkit-text-emphasis: none;
+}
+.markdown ruby > rt {
+	display: block;
+	text-align: start;
+}
+.markdown ruby > rp {
+	display: none;
+}
+.markdown noframes {
+	display: none;
+}
+.markdown frameset,
+.markdown frame {
+	display: block;
+}
+.markdown frameset {
+	border-color: inherit;
+}
+.markdown iframe {
+	border: 2px inset;
+}
+.markdown details {
+	display: block;
+}
+.markdown summary {
+	display: block;
+}
+.markdown summary::-webkit-details-marker {
+	display: inline-block;
+	width: 0.66em;
+	height: 0.66em;
+	margin-right: 0.4em;
+}
+.markdown template {
+	display: none;
+}
+.markdown bdi,
+.markdown output {
+	unicode-bidi: isolate;
+}
+.markdown bdo {
+	unicode-bidi: bidi-override;
+}
+@page {
+	size: auto;
 	padding: 0;
-	margin: 0;
-}
-
-.markdown div.nav li {
-	background: #333;
-	border-bottom-width: 0;
-	float: left;
-	margin-right: 10px;
-	padding: 10px 20px;
-}
-
-.markdown div.nav li a {
-	border: none;
-	color: #9bd;
-	padding: 0;
-}
-
-.markdown div.nav li.active {
-	background: #eee;
-	border-right: 1px solid #222;
-	color: #333;
-}
-
-.markdown div.nav li.active a {
-	color: #333;
-}
-
-.markdown div.nav li.first {
-	background: none;
-	border: none;
-	padding: 10px 10px 10px 0
-}
-
-.markdown div.nav li.external {
-	background: none;
-	border: none;
-}
-
-.markdown div.nav li.external a {
-	color: #db9;
+	border-width: 0;
 }
 
 /*
@@ -256,89 +754,66 @@
 	color: #59b;
 	padding: 0;
 }
-
 .markdown a code {
 	color: #59b;
 }
-
 .markdown blockquote {
 	background: none;
 	border-left: 3px solid #777;
 	color: #777;
+	margin: 20px 0;
 	padding: 0 0 0 10px;
 }
-
 .markdown code {
-	background: #eee;
-	border: 1px solid #ddd;
-	padding: 0 5px 1px 5px;
+	background: #333;
+	border: 1px solid #333;
+	padding: 2px 5px;
 }
-
-.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+.markdown div.footnotes {
+	font-size: 14px;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
 	line-height: normal;
 	margin: 20px 0;
 }
-
 .markdown hr {
-	background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC") repeat-x 0 0;
+	background: transparent url("data:image/gif;base64,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") repeat-x 0 0;
 	border: 0 none;
 	color: #ccc;
 	height: 4px;
 	padding: 0;
 	margin: 15px 0;
 }
-
-.markdown div.footnotes {
-	font-size: 14px;
+.markdown ol {
+	padding-left: 64px;
 }
-
 .markdown pre {
-	background: #eee;
-	border: 1px solid #ddd;
+	background: #333;
+	border: 1px solid #333;
 	border-radius: 3px;
 	color: #555;
 	margin-bottom: 10px;
 	padding: 10px;
 }
-
 .markdown pre code {
 	background: none;
 	border: none;
 	padding: 0;
-
 }
-
 .markdown table {
 	border-width: 1px 0 0 1px;
 	border-color: #bbb;
 	border-style: solid;
 }
-
-.markdown table td, .markdown table th {
+.markdown table td,
+.markdown table th {
 	border-width: 0 1px 1px 0;
 	border-color: #bbb;
 	border-style: solid;
 	padding: 10px;
-}
-
-/*
- *
- * prettify
- *
- */
-
-.markdown span.tag {
-	color: #b19;
-}
-
-.markdown span.atn {
-	color: #975;
-}
-
-.markdown span.pun {
-	color: #b19;
-}
-
-.markdown span.atv {
-	color: #559;
 }
